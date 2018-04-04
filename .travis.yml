@@ -1,0 +1,18 @@
+language: php
+
+php:
+  - 7.0.21
+  - 7.1
+  - 7.2
+
+sudo: false
+
+before_install:
+  - composer self-update
+
+install:
+  - composer update --prefer-dist --no-interaction --prefer-stable --no-suggest
+
+before_script: composer require phpunit/phpunit ^6.4
+
+script: vendor/bin/phpunit

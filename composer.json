@@ -1,0 +1,34 @@
+{
+    "name": "spartan/codingstandard",
+    "description": "Spartan CodingStandard library",
+    "type": "library",
+    "keywords": [
+        "library",
+        "spartan",
+        "codingstandard"
+    ],
+    "homepage": "http://spartanphp.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Iulian N.",
+            "email": "iulian@spartanphp.com",
+            "homepage": "http://spartanphp.com",
+            "role": "developer"
+        }
+    ],
+    "support": {
+        "email": "support@spartanphp.com",
+        "docs": "http://docs.spartanphp.com"
+    },
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spartan\\CodingStandard\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

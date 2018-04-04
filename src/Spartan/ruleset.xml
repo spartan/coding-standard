@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<ruleset name="Spartan" namespace="Spartan">
+
+    <description>Spartan PHP coding standard</description>
+
+    <exclude-pattern>*/tests/*</exclude-pattern>
+    <exclude-pattern>*/docs/*</exclude-pattern>
+
+    <arg name="colors"/>
+    <arg value="sp"/>
+
+    <rule ref="PSR2"/>
+
+    <!--
+    1. Files
+    -->
+
+    <!-- Makes sure that shorthand PHP open tags are not used. -->
+    <rule ref="Generic.PHP.DisallowShortOpenTag.EchoFound">
+        <severity>0</severity>
+    </rule>
+
+    <!-- A simple sniff for detecting BOMs that may corrupt application work. -->
+    <rule ref="Generic.Files.ByteOrderMark"/>
+
+    <!--
+    2. Lines
+    -->
+
+    <!-- 120 => 140 characters -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="140"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+    </rule>
+
+    <!-- If an assignment goes over two lines, ensure the equal sign is indented. -->
+    <rule ref="PEAR.Formatting.MultiLineAssignment"/>
+
+    <!-- Ensures there is no space after cast tokens. -->
+    <rule ref="Generic.Formatting.NoSpaceAfterCast"/>
+
+    <!-- Don't use brackets -->
+    <rule ref="Squiz.Strings.EchoedStrings"/>
+
+    <!-- One space between concatenation strings -->
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="spacing" value="1"/>
+        </properties>
+    </rule>
+
+    <!-- Disallow usage of 'and' / 'or' -->
+    <rule ref="Squiz.Operators.ValidLogicalOperators"/>
+
+    <!--
+    3. Constants
+    -->
+
+    <!-- Ensures that constant names are all uppercase. -->
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+
+    <!--
+    4. Control structures
+    -->
+
+    <!--
+    5. Classes
+    -->
+
+    <!-- Ensures all class keywords are lowercase. -->
+    <rule ref="Squiz.Classes.LowercaseClassKeywords"/>
+
+    <!-- Avoid PHP 4 constructor syntax, which uses "function ClassName()". -->
+    <rule ref="Generic.NamingConventions.ConstructorName"/>
+
+    <!--
+    6. Methods, functions and closures
+    -->
+
+    <!-- Ensures method names are named correctly. -->
+    <rule ref="Generic.NamingConventions.CamelCapsFunctionName"/>
+
+    <!-- Ensure single and multi-line function declarations are defined correctly. -->
+    <rule ref="PEAR.Functions.FunctionDeclaration"/>
+
+    <!--
+    7. Properties
+    -->
+
+    <!--
+    8. Namespaces and Traits
+    -->
+
+    <!--
+    9. Comments
+    -->
+
+    <!-- Checks class comment to include package, author and license. -->
+    <!-- Commenting/ClassComment -->
+
+    <!-- Parses and verifies the doc comments for functions. Allows @inheritDoc -->
+    <!-- Commenting.FunctionComment -->
+
+    <!-- Parses and verifies the doc comments. Allows @inheritDoc -->
+    <!-- Commenting.DocComment -->
+
+    <!-- Checks that no perl-style comments are used. -->
+    <rule ref="PEAR.Commenting.InlineComment"/>
+
+    <!-- Make sure empty catch has a comment -->
+    <rule ref="Squiz.Commenting.EmptyCatchComment"/>
+
+    <!--
+    10. PHP
+    -->
+
+    <!-- Disallow eval -->
+    <rule ref="Squiz.PHP.Eval"/>
+
+    <!-- Disallow forbidden functions -->
+    <rule ref="Squiz.PHP.ForbiddenFunctions"/>
+
+    <!-- Allow only PHP lowercase function names -->
+    <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
+
+</ruleset>
